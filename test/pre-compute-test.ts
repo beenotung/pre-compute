@@ -16,7 +16,7 @@ async function fetch(idx: number) {
 type Data = number
 
 const n = 20
-const compute = new PreCompute<Data>({
+const compute = new PreCompute<Promise<Data>>({
   bufferSize: 5,
   producer: fetch,
 })
