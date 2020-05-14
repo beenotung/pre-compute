@@ -1,13 +1,13 @@
 {
   "name": "pre-compute",
   "version": "0.1.0",
-  "description": "",
-  "keywords": [],
-  "author": {
-    "name": "Beeno Tung",
-    "email": "aabbcc1241@yahoo.com.hk",
-    "url": "https://beeno-tung.surge.sh"
-  },
+  "description": "pre-compute or pre-fetch resources into buffer/cache to maximize concurrent processing capacity. With automatic back-pressure management.",
+  "keywords": [
+    "prefetch",
+    "buffer",
+    "pre-compute"
+  ],
+  "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,5 +48,13 @@
     "tslint-eslint-rules": "^5.4.0",
     "tslint-etc": "^1.10.1",
     "typescript": "^3.9.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/pre-compute.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beenotung/pre-compute/issues"
+  },
+  "homepage": "https://github.com/beenotung/pre-compute#readme"
 }
