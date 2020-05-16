@@ -1,6 +1,6 @@
 {
   "name": "pre-compute",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "pre-compute or pre-fetch resources into buffer/cache to maximize concurrent processing capacity. With automatic back-pressure management.",
   "keywords": [
     "prefetch",
