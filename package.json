@@ -34,10 +34,10 @@
     "dist"
   ],
   "dependencies": {
-    "@beenotung/tslib": "^16.20.1",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@beenotung/tslib": "^16.20.1",
     "@types/node": "*",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
