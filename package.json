@@ -9,52 +9,37 @@
   ],
   "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "npm run rawtest",
-    "clean": "rimraf dist",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "postformat": "tslint -p . --fix",
-    "prebuild": "npm run clean",
-    "build": "tsc -p tsconfig.build.json",
-    "pretest": "npm run format && npm run build",
-    "rawtest": "ts-node test/index.ts",
-    "prepublishOnly": "npm run rawtest && npm run build"
-  },
-  "husky": {
-    "hook": {
-      "pre-commit": "npm run format"
-    }
-  },
-  "directories": {
-    "test": "test"
-  },
-  "files": [
-    "dist"
-  ],
-  "dependencies": {
-    "tslib": "^2.0.0"
-  },
-  "devDependencies": {
-    "@beenotung/tslib": "^16.20.1",
-    "@types/node": "*",
-    "husky": "^4.2.5",
-    "prettier": "^2.0.5",
-    "rimraf": "^3.0.2",
-    "ts-node": "^8.10.1",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-etc": "^1.10.1",
-    "typescript": "^3.9.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/beenotung/pre-compute.git"
   },
+  "homepage": "https://github.com/beenotung/pre-compute#readme",
   "bugs": {
     "url": "https://github.com/beenotung/pre-compute/issues"
   },
-  "homepage": "https://github.com/beenotung/pre-compute#readme"
+  "main": "dist/cjs.js",
+  "types": "dist/pre-compute.d.ts",
+  "module": "dist/esm.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm test && npm run build",
+    "build": "run-s clean transpile",
+    "clean": "rimraf dist",
+    "transpile": "run-p esbuild tsc",
+    "esbuild": "node scripts/esbuild.js",
+    "tsc": "tsc -p ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.19",
+    "esbuild-node-externals": "^1.4.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  },
+  "directories": {
+    "test": "test"
+  }
 }

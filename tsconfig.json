@@ -1,38 +1,14 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": false,
-    "sourceMap": true,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "target": "es2018",
     "strict": true,
-    "skipLibCheck": true,
-    "downlevelIteration": false,
-    "importHelpers": true,
-    "lib": [
-      "dom",
-      "es2018"
-    ],
-    "module": "commonjs",
+    "noImplicitAny": true,
     "moduleResolution": "node",
-    "target": "es2015",
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "outDir": "dist"
   },
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/*.macro.ts",
-    "src/**/*.spec.ts",
-    "test/**/*.macro.ts",
-    "test/**/*.spec.ts"
-  ],
-  "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+  "files": [
+    "src/pre-compute.ts"
+  ]
 }
