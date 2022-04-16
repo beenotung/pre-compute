@@ -4,6 +4,7 @@
   "description": "pre-compute or pre-fetch resources into buffer/cache to maximize concurrent processing capacity. With automatic back-pressure management.",
   "keywords": [
     "prefetch",
+    "concurrent",
     "buffer",
     "pre-compute"
   ],
