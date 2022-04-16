@@ -6,22 +6,23 @@ With automatic back-pressure management.
 [![npm Package Version](https://img.shields.io/npm/v/pre-compute.svg?maxAge=3600)](https://www.npmjs.com/package/pre-compute)
 
 ## Use Case
+
 producer: pull-based resources, e.g. network/disk IO
 
 consumer: CPU intensive processing logic / async processor, that cannot catch up the data production rate
 
 ## Example
+
 ```typescript
 import { PreCompute } from 'pre-compute'
 
 let n = 100
 // a list of resources we want to fetch and process
-let urls = new Array(n).fill('').map((_,i) => 'http://example.com/post/' + i)
+let urls = new Array(n).fill('').map((_, i) => 'http://example.com/post/' + i)
 
 // fetch a resource
-function produce(i: number) {
-  return fetch(urls[i])
-    .then(res => res.text())
+function producer(i: number) {
+  return fetch(urls[i]).then(res => res.text())
 }
 
 // the state of the processor
@@ -35,20 +36,20 @@ function consume(text: string) {
   })
 }
 
-const compute = new PreCompute<string>({
-  bufferSize: 20, // prefetch this amount of resources for the downstream consumer
-  producer: produce // the resource producer, takes idx as parameter
+const compute = new PreCompute({
+  bufferSize: 20, // pre-fetch this amount of resources for the downstream consumer
+  producer, // the resource producer, takes idx as parameter
 })
 
 async function main() {
   // the main loop
-  for(let i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     // get i^th resources, and pre-fetch next 20 resources (sliding window)
     let text = await compute.get(i)
     consume(text) // can put await if needed, this can cause back-pressure on the pre-fetching
   }
   // print the final result
-  let total = Array.from(wordCounts.values()).reduce((acc,c) => acc + c)
+  let total = Array.from(wordCounts.values()).reduce((acc, c) => acc + c)
   console.log('number of words:', total)
 }
 
@@ -58,4 +59,5 @@ main()
 Complete example in: [test/pre-compute-test.ts](./test/pre-compute-test.ts)
 
 ## Todo
+
 - [ ] auto adjust the buffer size by time/memory constraint
