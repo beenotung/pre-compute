@@ -21,7 +21,38 @@ consumer: CPU intensive processing logic / async processor, that cannot catch up
 - lightweight (<1KB)
 - built-in typescript support
 
-## Example
+## Installation
+
+### Install with package manager
+
+```bash
+npm i pre-compute
+```
+
+You can also install it with [pnpm](https://www.npmjs.com/package/pnpm) or [yarn](https://www.npmjs.com/package/yarn)
+
+import from typescript or javascript (ESM)
+
+```typescript
+import { PreCompute } from 'pre-compute'
+```
+
+import from node.js (CommonJS)
+
+```javascript
+const { PreCompute } = require('pre-compute')
+```
+
+### To use in browser directly
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/pre-compute@1/dist/browser.min.js"></script>
+<script>
+  const compute =  new PreCompute({...})
+</script>
+```
+
+## Usage Example
 
 ```typescript
 import { PreCompute } from 'pre-compute'
