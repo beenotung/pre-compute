@@ -1,6 +1,6 @@
 import { PreCompute } from '../src/pre-compute'
 
-let delay = 10
+let delay = 100
 
 function producer(idx: number) {
   return new Promise<number>(resolve => setTimeout(() => resolve(idx), delay))
