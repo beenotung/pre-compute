@@ -24,6 +24,7 @@
   "main": "dist/cjs.js",
   "types": "dist/pre-compute.d.ts",
   "module": "dist/esm.js",
+  "browser": "dist/browser.js",
   "sideEffects": false,
   "files": [
     "dist"
