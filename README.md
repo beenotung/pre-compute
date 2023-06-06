@@ -16,7 +16,7 @@ consumer: CPU intensive processing logic / async processor, that cannot catch up
 ## Features
 
 - optimized for IO-intensive task with latency, e.g. network/disk IO
-- isomorphic (support node.js and browser)
+- isomorphic (support browser, node.js in CommonJS and ESM)
 - memory-efficient (using ring-buffer)
 - lightweight (<1KB)
 
