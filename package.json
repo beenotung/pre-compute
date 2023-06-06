@@ -6,7 +6,10 @@
     "prefetch",
     "concurrent",
     "buffer",
-    "pre-compute"
+    "pre-compute",
+    "producer-consumer",
+    "ring-buffer",
+    "isomorphic"
   ],
   "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
   "license": "BSD-2-Clause",
