@@ -3,7 +3,9 @@
 pre-compute or pre-fetch resources into buffer/cache to maximize concurrent processing capacity.
 With automatic back-pressure management.
 
-[![npm Package Version](https://img.shields.io/npm/v/pre-compute.svg?maxAge=3600)](https://www.npmjs.com/package/pre-compute)
+[![npm Package Version](https://img.shields.io/npm/v/pre-compute)](https://www.npmjs.com/package/pre-compute)
+[![Minified Package Size](https://img.shields.io/bundlephobia/min/pre-compute)](https://bundlephobia.com/package/pre-compute)
+[![Minified and Gzipped Package Size](https://img.shields.io/bundlephobia/minzip/pre-compute)](https://bundlephobia.com/package/pre-compute)
 
 ## Use Case
 
