@@ -11,6 +11,13 @@ producer: pull-based resources, e.g. network/disk IO
 
 consumer: CPU intensive processing logic / async processor, that cannot catch up the data production rate
 
+## Features
+
+- optimized for IO-intensive task with latency, e.g. network/disk IO
+- isomorphic (support node.js and browser)
+- memory-efficient (using ring-buffer)
+- lightweight (<1KB)
+
 ## Example
 
 ```typescript
@@ -62,6 +69,14 @@ main()
 ```
 
 Complete example in: [test/pre-compute-test.ts](./test/pre-compute-test.ts)
+
+## Tips to speed up consumer
+
+This library applies concurrent computing for consumer that need to mutate the same memory.
+
+The IO calls in producer are executed in parallel underneath while the consumer is executed sequentially.
+
+For CPU-intensive work that can be parallelized without mutex lock, you can use [workerpool](https://www.npmjs.com/package/workerpool) for the consumer, then both the producer and consumer will be multiple-threaded.
 
 ## Todo
 
