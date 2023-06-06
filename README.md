@@ -37,8 +37,13 @@ function consume(text: string) {
 }
 
 const compute = new PreCompute({
-  bufferSize: 20, // pre-fetch this amount of resources for the downstream consumer
-  producer, // the resource producer, takes idx as parameter
+  // pre-fetch this amount of resources for the downstream consumer
+  bufferSize: 20,
+  // the resource producer, takes idx as parameter
+  producer,
+  // eagerly pre-fetch until this index inclusively
+  // optional, default is unlimited
+  max: n,
 })
 
 async function main() {
